@@ -20,7 +20,7 @@ nav ul > li:hover{text-shadow:1px 2px 2px #111}
 
 nav li i{font-size:20px; color:#efefef}
 
-nav ol{padding-left:20%; display:none}
+nav ol{padding-left:1%; display:none}
 
 nav ul li:hover ol{display:block}
 
