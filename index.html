@@ -12,7 +12,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=10" />
 <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/
 jquery/3.3.1/jquery.min.js" ></script></head>
-
+<script>
+			async function load(url, sel){
+				const obj = await (await fetch(url)).json();
+				if(obj == 0){ return "not released"; } else {
+					switch(sel){
+						case 1: let uval = obj[0].assets[0].updated_at;
+							return uval.slice(0,10); break;
+						case 2: let fsval = obj[0].assets[0].size;
+							return (Math.round((fsval/1e6)*1000)/1000)+" MB"; break;
+						case 3: return obj[0].assets[0].download_count; break;
+					}
+				}
+			}
+			const mirai = 'https://api.github.com/repos/bambosan/Mirai-Shaders-BE/releases';
+			load(mirai,1).then(val => { mirai_lu.innerHTML = val});
+			load(mirai,2).then(val => { mirai_sf.innerHTML = val});
+			load(mirai,3).then(val => { mirai_td.innerHTML = val});
+		</script>
 <body>
 <header style="background-color:#222;color:#fff" class="w3-card">
 <section class="w3-row control">
