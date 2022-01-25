@@ -12,24 +12,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=10" />
 <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/
 jquery/3.3.1/jquery.min.js" ></script></head>
-<script>
-			async function load(url, sel){
-				const obj = await (await fetch(url)).json();
-				if(obj == 0){ return "not released"; } else {
-					switch(sel){
-						case 1: let uval = obj[0].assets[0].updated_at;
-							return uval.slice(0,10); break;
-						case 2: let fsval = obj[0].assets[0].size;
-							return (Math.round((fsval/1e6)*1000)/1000)+" MB"; break;
-						case 3: return obj[0].assets[0].download_count; break;
-					}
-				}
-			}
-			const mirai = 'https://api.github.com/repos/bambosan/Hyra-Shaders-BE';
-			load(mirai,1).then(val => { mirai_lu.innerHTML = val});
-			load(mirai,2).then(val => { mirai_sf.innerHTML = val});
-			load(mirai,3).then(val => { mirai_td.innerHTML = val});
-		</script>
 <body>
 <header style="background-color:#222;color:#fff" class="w3-card">
 <section class="w3-row control">
@@ -53,7 +35,7 @@ jquery/3.3.1/jquery.min.js" ></script></head>
 </header>
 
 <div style="padding:2%;margin:5%;border:1px solid #ccc;border-radius:30px 0px 30px 0px;background-color:#fff;box-shadow: 0px 0px 6px 0px;"><center><img src="https://hyrazero.github.io/a.jpg" width="100%" height="100%" style="border-radius:30px 0px 30px 0px;"/></center><h3><a href="https://sfile.mobi/5yF7bvWffO3">TEST PAGE SHADERS V2</a></h3>
-<p class="infpack">				<i class="far fa-calendar-check"></i>&nbsp;<span id="mirai_lu"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-file"></i>&nbsp;<span id="mirai_sf"></span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-download"></i>&nbsp;<span id="mirai_td"></span>				</p>			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>	</div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
 <div style="padding:2%;margin:5%;border:1px solid #ccc;border-radius:30px 0px 30px 0px;background-color:#fff;box-shadow: 0px 0px 5px 0px;"><center><img src="https://hyrazero.github.io/b.jpg" width="100%" height="100%" style="border-radius:30px 0px 30px 0px;"/></center><h3><a href="https://sfile.mobi/5yF7bvWffO3">TEST PAGE SHADERS V2</a></h3>
 </div>
 <div style="padding:2%;margin:5%;border:1px solid #ccc;border-radius:30px 0px 30px 0px;background-color:#fff;box-shadow: 0px 0px 5px 0px;"><center><img src="https://hyrazero.github.io/c.jpg" width="100%" height="100%" style="border-radius:30px 0px 30px 0px;"/></center><h3><a href="https://sfile.mobi/5yF7bvWffO3">TEST PAGE SHADERS V2</a></h3>
